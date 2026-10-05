@@ -69,7 +69,7 @@ public class Viatura {
     public boolean equals(Object obj) {
         if (obj instanceof Viatura) {
             Viatura aux = (Viatura) obj;
-            if ((aux.getId().equals(this.id)) && (aux.getPlaca().equals(this.placa))) {
+            if ((aux.getId() != null) && (aux.getPlaca() != null)) {
                 return true;
             } else {
                 return false;

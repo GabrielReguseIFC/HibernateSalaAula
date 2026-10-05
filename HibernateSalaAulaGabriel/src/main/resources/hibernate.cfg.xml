@@ -23,5 +23,6 @@
         
         <mapping class="ifc.ibirama.entidades.Bombeiro" />
         <mapping class="ifc.ibirama.entidades.Viatura" />
+        <mapping class="ifc.ibirama.entidades.StatuViatu    ra" />
     </session-factory>
 </hibernate-configuration>
