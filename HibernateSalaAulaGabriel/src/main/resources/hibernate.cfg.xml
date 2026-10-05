@@ -22,5 +22,6 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         
         <mapping class="ifc.ibirama.entidades.Bombeiro" />
+        <mapping class="ifc.ibirama.entidades.Viatura" />
     </session-factory>
 </hibernate-configuration>

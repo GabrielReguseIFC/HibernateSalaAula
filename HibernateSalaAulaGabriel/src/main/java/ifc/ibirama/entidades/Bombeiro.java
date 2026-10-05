@@ -2,25 +2,27 @@ package ifc.ibirama.entidades;
 
 import java.time.LocalDate;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 @Table(name = "Bombeiro")
 public class Bombeiro {
 
     @Id
-    @GeneratedValue(strategy = GenerateType.IDENTITY)
-    @Column(name = "bom_id",)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "bom_id", unique = true, nullable = false)
     private Integer id;
-    @Column(name = "bom_cpf", lenght = 11, unique = true, nullable = false)
+    @Column(name = "bom_cpf", length = 11, unique = true, nullable = false)
     private String cpf;
     @Column(name = "bom_data_nascimento", nullable = false)
     private LocalDate dataNascimento;
-    @Column(name = "bom_nome_completo", lenght = 45, nullable = false)
+    @Column(name = "bom_nome_completo", length = 45, nullable = false)
     private String nome;
-    @Column(name = "bom_nome_guerra", lenght = 45, unique = true, nullable = false)
+    @Column(name = "bom_nome_guerra", length = 45, unique = true, nullable = false)
     private String guerra;
 
     //construtor
@@ -80,6 +82,11 @@ public class Bombeiro {
         } else {
             return false;
         }
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
     }
 
 }
